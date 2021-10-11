@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {  HashRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Login from './components/Login';
@@ -11,8 +11,7 @@ import ADMIN from "./components/Admin";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter basename="/">
     <Header />
     <Switch>
     <Route path="/" exact component={App} />
@@ -21,8 +20,7 @@ ReactDOM.render(
     <Route path="/add" exact component={AddPlayer} />
     <Route path="/admin" exact component={ADMIN} />
     </Switch>
-    </BrowserRouter>
-  </React.StrictMode>,
+    </HashRouter>,
   document.getElementById('root')
 );
 
