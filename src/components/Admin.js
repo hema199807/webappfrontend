@@ -61,7 +61,7 @@ const ADMIN = () => {
             }
         })
         setPlayers(updateteamNameArr);
-        console.log(updateteamNameArr,pagesCount[(Number(pagenumber))-1].name);
+        setTeamName(pagesCount[(Number(pagenumber))-1].name);
         setPageNo(pagenumber);
         window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+pagenumber);
     }
