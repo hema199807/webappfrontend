@@ -16,7 +16,12 @@ const Header = () => {
             setStatus(0);
             window.location.assign("https://hema199807.github.io/webappfrontend/#/");
         }
-       
+        window.onload = function() {
+            if(!window.location.hash) {
+                window.location = window.location + '#loaded';
+                window.location.reload();
+            }
+        }
         var myCookie1 =readCookie('userAccess');
         var myCookie2 =readCookie('userName');
         if(myCookie1){
