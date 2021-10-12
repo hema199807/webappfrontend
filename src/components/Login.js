@@ -37,7 +37,7 @@ const Login = () => {
         if(window.location.href.indexOf("?")==-1){
             setCount(1);
         }else{
-            const queryParams=queryString.parse(this.props.location.search);
+            const queryParams=queryString.parse(window.location.search);
             var teamname=queryParams.teamName;
             //var teamname=window.location.search.split("?teamName=")[1];
             console.log(teamname);
