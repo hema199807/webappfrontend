@@ -32,6 +32,31 @@ const Header = () => {
                 }
             }
         }
+    },[])
+    useEffect(()=>{
+        if(window.location.href.indexOf("?c=")!==-1){
+            createCookie('userAccess',"",-1);
+            createCookie('userName',"",-1);
+            setDisCss("");
+            setStatus(0);
+            window.location.assign("https://hema199807.github.io/webappfrontend/#/");
+        }
+        var myCookie1 =readCookie('userAccess');
+        var myCookie2 =readCookie('userName');
+        if(myCookie1){
+            setCount(1);
+        }
+        if(myCookie2){
+            setUserType(myCookie2);
+            if(myCookie2.toLowerCase()!=="admin"){
+                setStatus(1);
+            }
+            else{
+                if(myCookie2.toLowerCase()==="admin"){
+                    setStatus(2);
+                }
+            }
+        }
     },[status])
     function readCookie(name){
         var nameEQ = name + "=";
