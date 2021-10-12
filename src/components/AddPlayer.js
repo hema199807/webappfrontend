@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './Addplayer.css';
 import {useLocation} from "react-router-dom"
 import axios from 'axios';
+import Header from './Header';
 
 
 const AddPlayer = () => {
@@ -159,6 +160,8 @@ const AddPlayer = () => {
     }
 
     return ( 
+        <>
+        <Header />
         <div id="addplayers-main-div">
             <div id="players-div">
                 <h3 style={{textAlign:"center",color:"mediumblue",marginBottom:30+"px",marginTop:20+"px"}}>Enter Player Details</h3>
@@ -222,6 +225,7 @@ const AddPlayer = () => {
             </div> 
             
         </div> 
+        </>
     );
 }
  

@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import './login.css';
 import { Link } from 'react-router-dom';
-import {useLocation,useHistory} from "react-router-dom"
+import {useLocation} from "react-router-dom"
 import Modal from 'react-modal';
 import axios from 'axios';
+import Header from './Header';
 
 const customStyles = {
     content: {
@@ -32,7 +33,7 @@ const Login = () => {
     const [userId,setUserId]=useState("");
     const [passwordModalIsOpen,setPasswordModal]=useState(false);
     const [FPassword,setFPassword]=useState("");
-        let history = useHistory(); 
+         
         const search = useLocation().search;
     useEffect(()=>{
         if(window.location.href.indexOf("?")==-1){
@@ -232,6 +233,8 @@ const Login = () => {
         setPasswordModal(false);
     }
     return ( 
+        <>
+        <Header />
     <div id="login-background-img">
         <img src="https://www.thestatesman.com/wp-content/uploads/2020/09/QT-Cricket.jpg"/>
         <form id="login-form">
@@ -285,6 +288,7 @@ const Login = () => {
             <button id="pr-btn" onClick={handlePasswordChange}>Proceed</button>      
         </Modal>
     </div> 
+    </>
     );
 }
  

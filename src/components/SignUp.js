@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {useLocation} from "react-router-dom"
+import Header from './Header';
 import './signup.css';
 
 const SignUp = () => {
@@ -130,6 +131,8 @@ const SignUp = () => {
         }
     }
     return ( 
+        <>
+        <Header />
     <div id="signup-background-img">
         <img src="https://www.thestatesman.com/wp-content/uploads/2020/09/QT-Cricket.jpg"/>
         <form id="signup-form">
@@ -162,6 +165,7 @@ const SignUp = () => {
             
         </form>
     </div> 
+    </>
     );
 }
  

@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import "./App.css";
 import Icon from "./images/search-icon.svg";
 import loader from "./images/preloader.gif";
+import Header from './components/Header';
 
 class App extends Component {
   constructor(props) {
@@ -120,6 +121,8 @@ class App extends Component {
   render() { 
     const {searchValue,teamName,loading}=this.state;
     return ( 
+      <>
+      <Header />
       <div id="landingpage-background-img">
         <img src="https://www.thestatesman.com/wp-content/uploads/2020/09/QT-Cricket.jpg" style={{width:100+"%",height:100+"%"}}/>
         {loading===true ?<img style={{position:"absolute",width:100+"px",height:100+"px",bottom: 360+"px",left:45+"%"}} src={loader}/>:teamName===false?
@@ -139,6 +142,7 @@ class App extends Component {
         <h6 style={{fontSize:20+"px",color:"red",position:"absolute",bottom: 330+"px",left:45+"%"}}>Not Found</h6>
       </>}
       </div>
+      </>
     );
   }
 }

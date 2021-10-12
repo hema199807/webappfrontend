@@ -3,6 +3,7 @@ import axios from 'axios';
 import "./Admin.css";
 import loader from "../images/preloader.gif";
 import { Link, useLocation } from 'react-router-dom';
+import Header from './Header';
 
 
 const ADMIN = () => {
@@ -64,6 +65,8 @@ const ADMIN = () => {
         window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+pagenumber);
     }
     return ( 
+        <>
+        <Header />
         <div id="admin-main-div">
             {loading===true ?<img style={{position:"absolute",width:100+"px",height:100+"px",bottom: 360+"px",left:45+"%"}} src={loader}/>:
             <>
@@ -89,6 +92,7 @@ const ADMIN = () => {
             </div>
             </>}
         </div>
+        </>
     );
 }
  

@@ -12,7 +12,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <HashRouter basename="/">
-    <Header />
+    
     <Switch>
     <Route path="/" exact component={App} />
     <Route path="/login" exact component={Login} />
