@@ -11,6 +11,7 @@ const ADMIN = () => {
     const [teamName,setTeamName]=useState("");
     const [pagesCount,setPagesCount]=useState([]);
     const [pageNo,setPageNo]=useState(Number);
+    const [data,setData]=useState([]);
 
     const search = useLocation().search;
     useEffect(()=>{
@@ -44,15 +45,22 @@ const ADMIN = () => {
                     return item;
                 }
             })
-             
+            setData(data.data);
             setPagesCount(mArr);
             setTeamName(mArr[(Number(p))-1].name);
             setPlayers(teamNameArr);
             setLoading(false);
         })
-    },[pageNo])
+    },[])
     function handlePagination(pagenumber){
-        setPageNo(Number);
+        
+        var updateteamNameArr=data.filter((item)=>{
+            if(item.from.toLowerCase()===teamName.toLowerCase()){
+                return item;
+            }
+        })
+        setPlayers(updateteamNameArr);
+        setPageNo(pagenumber);
         window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+pagenumber);
     }
     return ( 
@@ -75,7 +83,7 @@ const ADMIN = () => {
             <div id="align-page-no">
             {pagesCount.length && pagesCount.map((item,index)=>{
                 return <div className="pagination" key={index}>
-                        <button className={pageNo-1==index?"active":""} onClick={()=>handlePagination(index+1)}>{index+1}</button>
+                        <button className={pageNo==index+1?"active":""} onClick={()=>handlePagination(index+1)}>{index+1}</button>
                 </div>
             })}
             </div>
