@@ -13,7 +13,7 @@ const Header = () => {
             createCookie('userAccess',"",-1);
             createCookie('userName',"",-1);
         
-            window.location.assign("/");
+            window.location.assign("https://hema199807.github.io/webappfrontend/#/");
         }
         var myCookie1 =readCookie('userAccess');
         var myCookie2 =readCookie('userName');
