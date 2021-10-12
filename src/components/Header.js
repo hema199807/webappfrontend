@@ -14,7 +14,7 @@ const Header = () => {
             createCookie('userName',"",-1);
             setDisCss("");
             window.location.assign("https://hema199807.github.io/webappfrontend/#/");
-            location.reload();
+            window.location.reload();
         }
         var myCookie1 =readCookie('userAccess');
         var myCookie2 =readCookie('userName');
