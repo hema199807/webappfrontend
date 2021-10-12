@@ -16,29 +16,33 @@ const Header = () => {
             setStatus(0);
             window.location.assign("https://hema199807.github.io/webappfrontend/#/");
         }
-        window.onload = function() {
-            if(window.location.hash) {
-                window.location = window.location + '#loaded';
-                window.location.reload();
+        else{
+            var myCookie1 =readCookie('userAccess');
+            var myCookie2 =readCookie('userName');
+            if(myCookie1){
+                setCount(1);
             }
-        }
-        var myCookie1 =readCookie('userAccess');
-        var myCookie2 =readCookie('userName');
-        if(myCookie1){
-            setCount(1);
-        }
-        if(myCookie2){
-            setUserType(myCookie2);
-            if(myCookie2.toLowerCase()!=="admin"){
-                setStatus(1);
-            }
-            else{
-                if(myCookie2.toLowerCase()==="admin"){
-                    setStatus(2);
+            if(myCookie2){
+                setUserType(myCookie2);
+                if(myCookie2.toLowerCase()!=="admin"){
+                    setStatus(1);
+                }
+                else{
+                    if(myCookie2.toLowerCase()==="admin"){
+                        setStatus(2);
+                    }
                 }
             }
         }
+        
     })
+    if(count==1){
+        if(window.location.hash){
+            window.location=window.location+"#loaded";
+            window.location.reload();
+        }
+      
+    }
     function readCookie(name){
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
