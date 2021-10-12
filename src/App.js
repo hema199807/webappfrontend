@@ -15,7 +15,12 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    
+      var myCookie2 = this.readCookie('userName');
+      if(myCookie2){
+        if(myCookie2.toLowerCase()=="admin"){
+          window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+1);
+        }
+      }
     
     let mArr=[];
    
