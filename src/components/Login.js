@@ -32,7 +32,6 @@ const Login = () => {
     const [userId,setUserId]=useState("");
     const [passwordModalIsOpen,setPasswordModal]=useState(false);
     const [FPassword,setFPassword]=useState("");
-    useEffect(()=>{
         
         if(window.location.href.indexOf("?")==-1){
             setCount(1);
@@ -45,7 +44,6 @@ const Login = () => {
             //setTeamName(teamname);
             setId(id);
         }
-    },[])
     function createCookie(name,value,days) {
         if (days) {
             var date = new Date();
