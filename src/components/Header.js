@@ -33,7 +33,7 @@ const Header = () => {
                 }
             }
         }
-    },[])
+    })
     function readCookie(name){
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
