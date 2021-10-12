@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './login.css';
 import { Link } from 'react-router-dom';
-import queryString from 'query-string';
+import {useLocation} from "react-router-dom"
 import Modal from 'react-modal';
 import axios from 'axios';
 
@@ -37,8 +37,8 @@ const Login = () => {
         if(window.location.href.indexOf("?")==-1){
             setCount(1);
         }else{
-            const queryParams=queryString.parse(window.location.search);
-            var teamname=queryParams.teamName;
+            const search = useLocation().search;
+            const teamname = new URLSearchParams(search).get('teamName');
             //var teamname=window.location.search.split("?teamName=")[1];
             console.log(teamname);
             var id=window.location.search.split("id=")[1];
