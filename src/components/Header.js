@@ -67,9 +67,9 @@ const Header = () => {
        <>
         <header id="top-bar">
             <div id="logo">
-                <a href="https://hema199807.github.io/webappfrontend/#/">
+                <Link to="/">
                 <img src={logo} alt="ipl logo"/>
-                </a>
+                </Link>
             </div>
             <div>
                 <h1 id="title">IPL Cricket Players</h1>
