@@ -11,6 +11,7 @@ const Header = () => {
     const [userType,setUserType]=useState("");
     
     useEffect(()=>{
+        console.log("hi header")
         if(window.location.href.indexOf("?c=")!==-1){
             createCookie('userAccess',"",-1);
             createCookie('userName',"",-1);
@@ -38,7 +39,7 @@ const Header = () => {
             }
         }
         
-    },[])
+    })
     
     // function readCookie(name){
     //     var nameEQ = name + "=";
