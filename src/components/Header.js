@@ -19,6 +19,7 @@ const Header = () => {
         else{
             var myCookie1 =readCookie('userAccess');
             var myCookie2 =readCookie('userName');
+            console.log(myCookie1)
             if(myCookie1){
                 setCount(1);
             }
