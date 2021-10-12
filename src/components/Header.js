@@ -17,9 +17,11 @@ const Header = () => {
             window.location.assign("https://hema199807.github.io/webappfrontend/#/");
         }
         else{
+            if(count==0){
+                window.location.reload();
+            }
             var myCookie1 =readCookie('userAccess');
             var myCookie2 =readCookie('userName');
-            console.log(myCookie1)
             if(myCookie1){
                 setCount(1);
             }
@@ -37,13 +39,7 @@ const Header = () => {
         }
         
     })
-    if(count==1){
-        if(window.location.hash){
-            window.location=window.location+"#loaded";
-            window.location.reload();
-        }
-      
-    }
+    
     function readCookie(name){
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
