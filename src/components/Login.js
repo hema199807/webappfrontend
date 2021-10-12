@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './login.css';
 import { Link } from 'react-router-dom';
+import queryString from 'query-string';
 import Modal from 'react-modal';
 import axios from 'axios';
 
@@ -32,11 +33,14 @@ const Login = () => {
     const [passwordModalIsOpen,setPasswordModal]=useState(false);
     const [FPassword,setFPassword]=useState("");
     useEffect(()=>{
+        
         if(window.location.href.indexOf("?")==-1){
             setCount(1);
         }else{
+            const queryParams=queryString.parse(this.props.location.search);
+            var teamname=queryParams.teamName;
             //var teamname=window.location.search.split("?teamName=")[1];
-            console.log(window.location.search.split("?")[1]);
+            console.log(teamname);
             var id=window.location.search.split("id=")[1];
             //setTeamName(teamname);
             setId(id);

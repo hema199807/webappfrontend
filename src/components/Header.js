@@ -12,8 +12,9 @@ const Header = () => {
         if(window.location.href.indexOf("?c=")!==-1){
             createCookie('userAccess',"",-1);
             createCookie('userName',"",-1);
-        
+            setDisCss("");
             window.location.assign("https://hema199807.github.io/webappfrontend/#/");
+            location.reload();
         }
         var myCookie1 =readCookie('userAccess');
         var myCookie2 =readCookie('userName');
@@ -60,8 +61,9 @@ const Header = () => {
     function handleSignOut(){
         createCookie('userAccess',"",-1);
         createCookie('userName',"",-1);
-        
+        setDisCss("");
         window.location.assign("https://hema199807.github.io/webappfrontend/#/");
+        location.reload();
     }
     return ( 
        <>
