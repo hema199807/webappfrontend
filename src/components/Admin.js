@@ -56,7 +56,7 @@ const ADMIN = () => {
     function handlePagination(pagenumber){
         
         var updateteamNameArr=data.filter((item)=>{
-            if(item.from.toLowerCase()===teamName.toLowerCase()){
+            if(item.from.toLowerCase()===pagesCount[(Number(pagenumber))-1].name.toLowerCase()){
                 return item;
             }
         })
