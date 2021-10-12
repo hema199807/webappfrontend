@@ -13,7 +13,8 @@ const Header = () => {
             createCookie('userAccess',"",-1);
             createCookie('userName',"",-1);
             setDisCss("");
-            window.location.href("https://hema199807.github.io/webappfrontend/#/");
+            setStatus(0);
+            window.location.assign("https://hema199807.github.io/webappfrontend/#/");
         }
         var myCookie1 =readCookie('userAccess');
         var myCookie2 =readCookie('userName');
@@ -31,7 +32,7 @@ const Header = () => {
                 }
             }
         }
-    },[])
+    },[status])
     function readCookie(name){
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
@@ -61,7 +62,8 @@ const Header = () => {
         createCookie('userAccess',"",-1);
         createCookie('userName',"",-1);
         setDisCss("");
-        window.location.href("https://hema199807.github.io/webappfrontend/#/");
+        setStatus(0);
+        window.location.assign("https://hema199807.github.io/webappfrontend/#/");
     }
     return ( 
        <>
