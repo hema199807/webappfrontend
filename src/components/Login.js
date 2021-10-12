@@ -35,10 +35,10 @@ const Login = () => {
         if(window.location.href.indexOf("?")==-1){
             setCount(1);
         }else{
-            var teamname=window.location.search.split("?teamName=")[1];
-            console.log(teamname);
+            //var teamname=window.location.search.split("?teamName=")[1];
+            console.log(window.location.search.split("?teamName=")[1]);
             var id=window.location.search.split("id=")[1];
-            setTeamName(teamname);
+            //setTeamName(teamname);
             setId(id);
         }
     },[])
