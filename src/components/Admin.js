@@ -16,7 +16,7 @@ const ADMIN = () => {
     useEffect(()=>{
         let mArr=[];
         var p=new URLSearchParams(search).get('p');
-        setPageNo(p,window.location.reload());
+        setPageNo(p);
         axios("https://iplcricketteamplayers.herokuapp.com/getPlayers").then(({data})=>{
             
             function setArr(item){
@@ -38,6 +38,7 @@ const ADMIN = () => {
                   setArr(data.data[i]);
                 }
             }
+        
             var teamNameArr=data.data.filter((item)=>{
                 if(item.from.toLowerCase()===mArr[(Number(p))-1].name.toLowerCase()){
                     return item;
@@ -49,8 +50,9 @@ const ADMIN = () => {
             setPlayers(teamNameArr);
             setLoading(false);
         })
-    })
+    },[pageNo])
     function handlePagination(pagenumber){
+        setPageNo(pagenumber);
         window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+pagenumber);
     }
     return ( 
