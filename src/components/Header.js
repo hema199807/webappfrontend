@@ -17,9 +17,6 @@ const Header = () => {
             window.location.assign("https://hema199807.github.io/webappfrontend/#/");
         }
         else{
-            if(count==0){
-                window.location.reload();
-            }
             var myCookie1 =readCookie('userAccess');
             var myCookie2 =readCookie('userName');
             if(myCookie1){
@@ -38,7 +35,7 @@ const Header = () => {
             }
         }
         
-    })
+    },[])
     
     function readCookie(name){
         var nameEQ = name + "=";
