@@ -35,7 +35,7 @@ const Login = () => {
         if(window.location.href.indexOf("?")==-1){
             setCount(1);
         }else{
-            var teamname=window.location.search.split("?teamName=")[1].split("&id")[0];
+            var teamname=window.location.search.split("?teamName=")[1];
             console.log(teamname);
             var id=window.location.search.split("id=")[1];
             setTeamName(teamname);
