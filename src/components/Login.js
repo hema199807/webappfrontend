@@ -99,7 +99,7 @@ const Login = () => {
                 if(count==0){
                     var myCookie2 = readCookie('userName');
                     if(myCookie2){
-                        window.location.assign("https://iplcricketteamplayers.herokuapp.com/details?teamName="+teamName+"&id="+playerId+"&s="+1);
+                       // window.location.assign("https://iplcricketteamplayers.herokuapp.com/details?teamName="+teamName+"&id="+playerId+"&s="+1);
                     }else{
                     window.location.assign("https://iplcricketteamplayers.herokuapp.com/details?teamName="+teamName+"&id="+playerId);
                     }
