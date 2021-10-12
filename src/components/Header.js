@@ -16,6 +16,7 @@ const Header = () => {
             setStatus(0);
             window.location.assign("https://hema199807.github.io/webappfrontend/#/");
         }
+       
         var myCookie1 =readCookie('userAccess');
         var myCookie2 =readCookie('userName');
         if(myCookie1){
