@@ -33,10 +33,11 @@ const Login = () => {
     const [passwordModalIsOpen,setPasswordModal]=useState(false);
     const [FPassword,setFPassword]=useState("");
         
+        const search = useLocation().search;
         if(window.location.href.indexOf("?")==-1){
             setCount(1);
         }else{
-            const search = useLocation().search;
+            
             const teamname = new URLSearchParams(search).get('teamName');
             //var teamname=window.location.search.split("?teamName=")[1];
             console.log(teamname);
