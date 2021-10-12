@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './login.css';
 import { Link } from 'react-router-dom';
-import {useLocation} from "react-router-dom"
+import {useLocation,useHistory} from "react-router-dom"
 import Modal from 'react-modal';
 import axios from 'axios';
 
@@ -32,7 +32,7 @@ const Login = () => {
     const [userId,setUserId]=useState("");
     const [passwordModalIsOpen,setPasswordModal]=useState(false);
     const [FPassword,setFPassword]=useState("");
-        
+        let history = useHistory(); 
         const search = useLocation().search;
     useEffect(()=>{
         if(window.location.href.indexOf("?")==-1){
@@ -109,7 +109,7 @@ const Login = () => {
                         if(myCookie2.toLowerCase()=="admin"){
                             window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+1);
                         } else{
-                            window.location.assign("https://hema199807.github.io/webappfrontend/#/");
+                            history.push("https://hema199807.github.io/webappfrontend/#/")
                         }
                     }
                    
