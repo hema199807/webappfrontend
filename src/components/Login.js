@@ -109,7 +109,7 @@ const Login = () => {
                         if(myCookie2.toLowerCase()=="admin"){
                             window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+1);
                         } else{
-                            history.push("/")
+                            window.location.assign("https://hema199807.github.io/webappfrontend/#/");
                         }
                     }
                    

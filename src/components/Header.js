@@ -1,13 +1,15 @@
 import React,{useEffect, useState} from 'react';
 import "./header.css";
 import { Link} from 'react-router-dom';
-import logo from "../images/logo.png"
+import logo from "../images/logo.png";
+import Cookies from 'js-cookie';
 
 const Header = () => {
     const [count,setCount]=useState(0);
     const [status,setStatus]=useState(0);
     const [discss,setDisCss]=useState("");
     const [userType,setUserType]=useState("");
+    
     useEffect(()=>{
         if(window.location.href.indexOf("?c=")!==-1){
             createCookie('userAccess',"",-1);
@@ -17,8 +19,9 @@ const Header = () => {
             window.location.assign("https://hema199807.github.io/webappfrontend/#/");
         }
         else{
-            var myCookie1 =readCookie('userAccess');
-            var myCookie2 =readCookie('userName');
+            var myCookie1 =Cookies.get('userAccess');
+            var myCookie2 =Cookies.get('userName');
+            console.log(myCookie2)
             if(myCookie1){
                 setCount(1);
             }
@@ -37,16 +40,16 @@ const Header = () => {
         
     },[])
     
-    function readCookie(name){
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-        }
-        return null;
-    }
+    // function readCookie(name){
+    //     var nameEQ = name + "=";
+    //     var ca = document.cookie.split(';');
+    //     for(var i=0;i < ca.length;i++) {
+    //         var c = ca[i];
+    //         while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    //         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    //     }
+    //     return null;
+    // }
     function handleToSignOut(){
        setDisCss("sign-out user-out");
     }
