@@ -34,17 +34,18 @@ const Login = () => {
     const [FPassword,setFPassword]=useState("");
         
         const search = useLocation().search;
+    useEffect(()=>{
         if(window.location.href.indexOf("?")==-1){
             setCount(1);
         }else{
             
             const teamname = new URLSearchParams(search).get('teamName');
-            //var teamname=window.location.search.split("?teamName=")[1];
-            console.log(teamname);
-            var id=window.location.search.split("id=")[1];
-            //setTeamName(teamname);
+           
+            const id=new URLSearchParams(search).get('id');
+            setTeamName(teamname);
             setId(id);
         }
+    })
     function createCookie(name,value,days) {
         if (days) {
             var date = new Date();

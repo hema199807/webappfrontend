@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
+import {useLocation} from "react-router-dom"
 import './signup.css';
 
 const SignUp = () => {
@@ -11,12 +12,14 @@ const SignUp = () => {
     const [confirmPassword,setConfirmPassword]=useState("");
     const [count,setCount]=useState(0);
     
+    const search = useLocation().search;
     useEffect(()=>{
         if(window.location.href.indexOf("?")==-1){
             setCount(1);
         }else{
-            let teamname=window.location.search.split("teamName=")[1].split("&id=")[0];
-            let id=window.location.search.split("&id=")[1];
+            const teamname = new URLSearchParams(search).get('teamName');
+           
+            const id=new URLSearchParams(search).get('id');
             setTeamName(teamname);
             setId(id);
         }

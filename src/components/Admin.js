@@ -2,7 +2,8 @@ import React,{useEffect, useState} from 'react';
 import axios from 'axios';
 import "./Admin.css";
 import loader from "../images/preloader.gif";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 
 const ADMIN = () => {
     const [players,setPlayers]=useState([]);
@@ -10,9 +11,11 @@ const ADMIN = () => {
     const [teamName,setTeamName]=useState("");
     const [pagesCount,setPagesCount]=useState([]);
     const [pageNo,setPageNo]=useState(Number);
+
+    const search = useLocation().search;
     useEffect(()=>{
         let mArr=[];
-        var p=window.location.search.split("p=")[1];
+        var p=new URLSearchParams(search).get('p');
         setPageNo(p);
         axios("https://iplcricketteamplayers.herokuapp.com/getPlayers").then(({data})=>{
             

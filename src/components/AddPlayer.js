@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './Addplayer.css';
+import {useLocation} from "react-router-dom"
 import axios from 'axios';
 
 
@@ -15,6 +16,8 @@ const AddPlayer = () => {
     const [count,setCount]=useState(0);
     const [playerId,setPlayerId]=useState("");
     const [pageNumber,setPageNumber]=useState(0);
+
+    const search = useLocation().search;
     useEffect(()=>{
         var myCookie1 =readCookie('userAccess');
         var myCookie2 =readCookie('userName');
@@ -27,12 +30,12 @@ const AddPlayer = () => {
             setCount(1);
              
         }else{
-            let teamname=window.location.search.split("teamName=")[1].split("&")[0];
-            let id=window.location.search.split("id=")[1];
+            const teamname=new URLSearchParams(search).get('teamName');
+            const id=new URLSearchParams(search).get('id');
             setTeamName(teamname);
             setPlayerId(id);
             if(window.location.href.indexOf("p=")!=-1){
-                let pageNo=window.location.search.split("p=")[1];
+                const pageNo=new URLSearchParams(search).get('p');
                 setPageNumber(pageNo);
                
             }
