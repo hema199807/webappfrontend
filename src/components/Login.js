@@ -48,7 +48,7 @@ const Login = () => {
             var expires = "; expires="+date.toUTCString();
         }
         else var expires = "";
-        document.cookie = name+"="+value+expires+"; path=/";
+        document.cookie = name+"="+value+expires+"; path=https://hema199807.github.io/webappfrontend/#/";
     }
     
     function readCookie(name) {
@@ -79,9 +79,9 @@ const Login = () => {
             if(response.data.msg==="User does not Exist"){
                 alert(response.data.msg);
                 if(count==0){
-                    window.location.assign("http://localhost:3000/signup?teamName="+teamName+"&id="+playerId);
+                    window.location.assign("https://hema199807.github.io/webappfrontend/#/signup?teamName="+teamName+"&id="+playerId);
                 }else{
-                    window.location.assign("http://localhost:3000/signup");
+                    window.location.assign("https://hema199807.github.io/webappfrontend/#/signup");
                 }
             }
             if(response.data.msg==="Invalid user"){
@@ -102,9 +102,9 @@ const Login = () => {
                     var myCookie2 = readCookie('userName');
                     if(myCookie2){
                         if(myCookie2.toLowerCase()=="admin"){
-                            window.location.assign("http://localhost:3000/admin?p="+1);
+                            window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+1);
                         } else{
-                            window.location.assign("http://localhost:3000/");
+                            window.location.assign("https://hema199807.github.io/webappfrontend/#/");
                         }
                     }
                    
@@ -129,7 +129,7 @@ const Login = () => {
                 window.location.assign("https://iplcricketteamplayers.herokuapp.com/details?teamName="+teamName+"&id="+playerId);
             }
         }else{
-            window.location.assign("http://localhost:3000/");
+            window.location.assign("https://hema199807.github.io/webappfrontend/#/");
         }
     }
     function handleForgetPassword(e){
@@ -157,9 +157,9 @@ const Login = () => {
             if(response.data.msg==="User does not Exist"){
                 alert(response.data.msg);
                 if(count==0){
-                    window.location.assign("http://localhost:3000/signup?teamName="+teamName+"&id="+playerId);
+                    window.location.assign("https://hema199807.github.io/webappfrontend/#/signup?teamName="+teamName+"&id="+playerId);
                 }else{
-                    window.location.assign("http://localhost:3000/signup");
+                    window.location.assign("https://hema199807.github.io/webappfrontend/#/signup");
                 }
             }else{
                 setUserId(response.data.id);

@@ -20,7 +20,7 @@ const AddPlayer = () => {
         var myCookie2 =readCookie('userName');
         if(!myCookie1||!myCookie2){
             alert("Your session Expired please login")
-            window.location.assign("http://localhost:3000/")
+            window.location.assign("https://hema199807.github.io/webappfrontend/#/")
         }
         setCode(getRandomString(6));
         if(window.location.href.indexOf("?")==-1){
@@ -61,7 +61,7 @@ const AddPlayer = () => {
     function handleCancel(){
         if(count==0){
             if(pageNumber>0){
-               return window.location.assign("http://localhost:3000/admin?p="+pageNumber);
+               return window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+pageNumber);
             }else{
                 return  window.location.assign("https://iplcricketteamplayers.herokuapp.com/details?teamName="+teamName+"&id="+playerId+"&s="+1);
             }
@@ -142,7 +142,7 @@ const AddPlayer = () => {
                 }else{
                     if(count==0){
                         if(pageNumber>0){
-                           return window.location.assign("http://localhost:3000/admin?p="+pageNumber);
+                           return window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+pageNumber);
                         }else{
                             return  window.location.assign("https://iplcricketteamplayers.herokuapp.com/details?teamName="+teamName+"&id="+playerId+"&s="+1);
                         }

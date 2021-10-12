@@ -49,7 +49,7 @@ const ADMIN = () => {
         })
     },[])
     function handlePagination(pagenumber){
-        window.location.assign("http://localhost:3000/admin?p="+pagenumber);
+        window.location.assign("https://hema199807.github.io/webappfrontend/#/admin?p="+pagenumber);
     }
     return ( 
         <div id="admin-main-div">

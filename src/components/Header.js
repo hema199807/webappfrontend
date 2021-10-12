@@ -55,19 +55,19 @@ const Header = () => {
             var expires = "; expires="+date.toUTCString();
         }
         else var expires = "";
-        document.cookie = name+"="+value+expires+"; path=/";
+        document.cookie = name+"="+value+expires+"; path=https://hema199807.github.io/webappfrontend/#/";
     }
     function handleSignOut(){
         createCookie('userAccess',"",-1);
         createCookie('userName',"",-1);
         
-        window.location.assign("/");
+        window.location.assign("https://hema199807.github.io/webappfrontend/#/");
     }
     return ( 
        <>
         <header id="top-bar">
             <div id="logo">
-                <a href="/">
+                <a href="https://hema199807.github.io/webappfrontend/#/">
                 <img src={logo} alt="ipl logo"/>
                 </a>
             </div>

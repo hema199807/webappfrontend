@@ -70,9 +70,9 @@ const SignUp = () => {
                
                 alert(response.data.message);
                 if(count==0){
-                    window.location.assign("http://localhost:3000/login?teamName="+teamName+"&id="+playerId);
+                    window.location.assign("https://hema199807.github.io/webappfrontend/#/login?teamName="+teamName+"&id="+playerId);
                 }else{
-                    window.location.assign("http://localhost:3000/");
+                    window.location.assign("https://hema199807.github.io/webappfrontend/#/");
                 }
             }
            
@@ -95,7 +95,7 @@ const SignUp = () => {
         if(count==0){
             window.location.assign("https://iplcricketteamplayers.herokuapp.com/details?teamName="+teamName+"&id="+playerId);
         }else{
-            window.location.assign("http://localhost:3000/");
+            window.location.assign("https://hema199807.github.io/webappfrontend/#/");
         }
     }
     function checkPassword(){
